@@ -25,12 +25,11 @@ defineprocces()
 document.getElementById("question").innerText=Qustionlist[0]
 document.getElementById("nextquestion").innerText=Qustionlist[1]
 
-function key(number){
-    
-    Ansawer=Ansawer+number
-    document.getElementById("ansawer").innerText=Ansawer
-    continuetime()
-}
+// function key(number){
+//     Ansawer=Ansawer+number
+//     document.getElementById("ansawer").innerText=Ansawer
+//     continuetime()
+// }
 function erase(){
     Ansawer=""
     document.getElementById("ansawer").innerText=Ansawer
@@ -88,3 +87,54 @@ function endquiz(){
     
 }
     
+
+function key1(){
+    Ansawer=Ansawer+1
+    document.getElementById("ansawer").innerText=Ansawer
+    continuetime()
+}
+function key2(){
+    Ansawer=Ansawer+2
+    document.getElementById("ansawer").innerText=Ansawer
+    continuetime()
+}
+function key3(){
+    Ansawer=Ansawer+3
+    document.getElementById("ansawer").innerText=Ansawer
+    continuetime()
+}
+function key4(){
+    Ansawer=Ansawer+4
+    document.getElementById("ansawer").innerText=Ansawer
+    continuetime()
+}
+function key5(){
+    Ansawer=Ansawer+5
+    document.getElementById("ansawer").innerText=Ansawer
+    continuetime()
+}
+function key6(){
+    Ansawer=Ansawer+6
+    document.getElementById("ansawer").innerText=Ansawer
+    continuetime()
+}
+function key7(){
+    Ansawer=Ansawer+7
+    document.getElementById("ansawer").innerText=Ansawer
+    continuetime()
+}
+function key8(){
+    Ansawer=Ansawer+8
+    document.getElementById("ansawer").innerText=Ansawer
+    continuetime()
+}
+function key9(){
+    Ansawer=Ansawer+9
+    document.getElementById("ansawer").innerText=Ansawer
+    continuetime()
+}
+function key0(){
+    Ansawer=Ansawer+0
+    document.getElementById("ansawer").innerText=Ansawer
+    continuetime()
+}
