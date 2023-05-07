@@ -66,6 +66,16 @@ body{
     }
     
 }
+@media screen and (min-aspect-ratio: 16/9) {
+    :root{
+        --fs:2VW;
+        --bfs:4VW;
+        --bcolor:rgb(227, 228, 206);
+    }
+    .qbox{
+        padding-top: 2%;
+    }
+}
 @media screen and (max-width:600px){
     :root{
         --fs:10VW;
