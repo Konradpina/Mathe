@@ -7,8 +7,6 @@ var Wrongansawerlist=[]
 var numqeustions=10
 var alowedwrong=1
 var alowedmin =1
-var debounceTimer;
-
 function definequestion(){
     Qustionlist=[];
     Ansawerlist=[];
@@ -27,15 +25,11 @@ defineprocces()
 document.getElementById("question").innerText=Qustionlist[0]
 document.getElementById("nextquestion").innerText=Qustionlist[1]
 
-
-
-function key(number) {
-  continuetime();
-  Ansawer = Ansawer + number;
-  clearTimeout(debounceTimer);
-  debounceTimer = setTimeout(function() {
-    document.getElementById("ansawer").innerText = Ansawer;
-  }, 100); // delay execution of function by 100 milliseconds
+function key(number){
+    
+    Ansawer=Ansawer+number
+    document.getElementById("ansawer").innerText=Ansawer
+    continuetime()
 }
 function erase(){
     Ansawer=""
