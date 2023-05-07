@@ -5,6 +5,10 @@ var Ansawer=""
 var Wrongquestionlist=[]
 var Wrongansawerlist=[]
 var numqeustions=10
+var alowedwrong=1
+var alowedmin =1
+var debounceTimer;
+
 function definequestion(){
     Qustionlist=[];
     Ansawerlist=[];
@@ -23,10 +27,15 @@ defineprocces()
 document.getElementById("question").innerText=Qustionlist[0]
 document.getElementById("nextquestion").innerText=Qustionlist[1]
 
-function key(number){
-    continuetime()
-    Ansawer=Ansawer+number
-    document.getElementById("ansawer").innerText=Ansawer
+
+
+function key(number) {
+  continuetime();
+  Ansawer = Ansawer + number;
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(function() {
+    document.getElementById("ansawer").innerText = Ansawer;
+  }, 100); // delay execution of function by 100 milliseconds
 }
 function erase(){
     Ansawer=""
@@ -43,13 +52,13 @@ function done(){
 }
 function lnq(){
     continuetime()
-    defineprocces()
+    
     erase()
 
     Questionnumber++
+    defineprocces()
     if(Qustionlist.length <= Questionnumber){
-        document.getElementById("question").innerText=Wrongquestionlist;
-        time("stop")
+        endquiz()
         return
     }
     document.getElementById("question").innerText=Qustionlist[Questionnumber]
@@ -59,7 +68,29 @@ function lnq(){
     }
 }
 function defineprocces(){
+    if(Questionnumber>=numqeustions){
+        return
+    }
     document.getElementById("process").innerText=`${Questionnumber+1}/${numqeustions}`
 }
 
 
+function endquiz(){
+    time("stop")
+    var msg
+    if (houers>0){
+        msg= "Um das nächste Level zu ereichen musst du schneller sein"
+    }else if(Wrongquestionlist.length <= alowedwrong && minutes < alowedmin){
+       msg="level up"
+    }else if(Wrongquestionlist.length >= alowedwrong && minutes >= alowedmin ){
+        msg= "Um das nächste Level zu ereichen musst du schneller sein und weniger Fehler machen"
+    }else if(Wrongquestionlist.length <= alowedwrong ){
+          msg= "Um das nächste Level zu ereichen musst du schneller sein"
+    }else if(minutes < alowedmin){
+        msg= "Um das nächste Level zu ereichen musst du weniger Fehler machen"
+  }
+    alert(`Du hast ${Wrongquestionlist.length} Fehler in ${minutes} Minuten und ${seconds} Sekunden gemacht. ${msg}`)
+    document.getElementById("question").innerText=Wrongquestionlist;
+    
+}
+    
