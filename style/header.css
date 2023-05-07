@@ -1,0 +1,24 @@
+.header{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    padding: 0%;
+    background-color:var(--mcolor);
+    border: black 1px solid;
+    font-size: var(--fs);
+    transition: all 1s;
+}
+@media screen and (max-width:600px){
+    /* handy desing  */
+    
+    .Contennt{
+     padding: 15% 10%;
+    }
+    .flex{
+     display: inline;
+    }
+    body{
+     margin-top: 20px;
+    }
+ }
