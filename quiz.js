@@ -7,6 +7,8 @@ var Wrongansawerlist=[]
 var numqeustions=10
 var alowedwrong=1
 var alowedmin =1
+var cmode=false
+var correctioncount=0
 function definequestion(){
     Qustionlist=[];
     Ansawerlist=[];
@@ -25,23 +27,32 @@ defineprocces()
 document.getElementById("question").innerText=Qustionlist[0]
 document.getElementById("nextquestion").innerText=Qustionlist[1]
 
-// function key(number){
-//     Ansawer=Ansawer+number
-//     document.getElementById("ansawer").innerText=Ansawer
-//     continuetime()
-// }
 function erase(){
     Ansawer=""
     document.getElementById("ansawer").innerText=Ansawer
+    document.getElementById("cansawer").innerText=Ansawer
 }
 function done(){
-    if (Ansawer==Ansawerlist[Questionnumber]){
-       console.log("yes") 
+    if(cmode){
+        if (Ansawer==Wrongansawerlist[correctioncount]){
+            correctioncount++
+            nextcorecction()
+         }else{
+         document.getElementById("cnextquestion").innerText="versuch es nochmal"
+         erase()
+        
+         }
+        
     }else{
-        Wrongquestionlist.push(Qustionlist[Questionnumber])
-        Wrongansawerlist.push(Ansawer[Questionnumber])
+        if (Ansawer==Ansawerlist[Questionnumber]){
+            console.log("yes") 
+         }else{
+             Wrongquestionlist.push(Qustionlist[Questionnumber])
+             Wrongansawerlist.push(Ansawerlist[Questionnumber])
+         }
+         lnq()
     }
-    lnq()
+    
 }
 function lnq(){
     continuetime()
@@ -84,57 +95,44 @@ function endquiz(){
   }
     alert(`Du hast ${Wrongquestionlist.length} Fehler in ${minutes} Minuten und ${seconds} Sekunden gemacht. ${msg}`)
     document.getElementById("question").innerText=Wrongquestionlist;
+    correctionmode()
     
 }
     
+function correctionmode(){
+    cmode=true
+    document.getElementById("quizbox").hidden=true
+    document.getElementById("correctionbox").hidden=false
+    nextcorecction()
+    return
+}
 
-function key1(){
-    Ansawer=Ansawer+1
-    document.getElementById("ansawer").innerText=Ansawer
-    continuetime()
+function nextcorecction(){
+    
+    erase()
+    
+    if(Wrongquestionlist.length <= correctioncount){
+        endcorrection()
+        return
+    }
+    document.getElementById("cquestion").innerText=Wrongquestionlist[correctioncount]
+    document.getElementById("cnextquestion").innerText=Wrongquestionlist[correctioncount+1]
+    if(Wrongquestionlist.length-1 === correctioncount){
+        document.getElementById("cnextquestion").innerText=""
+    }
 }
-function key2(){
-    Ansawer=Ansawer+2
-    document.getElementById("ansawer").innerText=Ansawer
-    continuetime()
+
+function endcorrection(){
+    window.open("index.html","_self")
 }
-function key3(){
-    Ansawer=Ansawer+3
-    document.getElementById("ansawer").innerText=Ansawer
+
+function key(number){
+    Ansawer=Ansawer+number
+    if(cmode){
+        document.getElementById("cansawer").innerText=Ansawer
+    }else{
+        document.getElementById("ansawer").innerText=Ansawer
     continuetime()
+    }
 }
-function key4(){
-    Ansawer=Ansawer+4
-    document.getElementById("ansawer").innerText=Ansawer
-    continuetime()
-}
-function key5(){
-    Ansawer=Ansawer+5
-    document.getElementById("ansawer").innerText=Ansawer
-    continuetime()
-}
-function key6(){
-    Ansawer=Ansawer+6
-    document.getElementById("ansawer").innerText=Ansawer
-    continuetime()
-}
-function key7(){
-    Ansawer=Ansawer+7
-    document.getElementById("ansawer").innerText=Ansawer
-    continuetime()
-}
-function key8(){
-    Ansawer=Ansawer+8
-    document.getElementById("ansawer").innerText=Ansawer
-    continuetime()
-}
-function key9(){
-    Ansawer=Ansawer+9
-    document.getElementById("ansawer").innerText=Ansawer
-    continuetime()
-}
-function key0(){
-    Ansawer=Ansawer+0
-    document.getElementById("ansawer").innerText=Ansawer
-    continuetime()
-}
+    
