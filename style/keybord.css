@@ -27,6 +27,7 @@
 }
 .key:hover{
     background-color: var(--mcolor);
+    color: var(--fcolor);
 }
 .keydiv{
     

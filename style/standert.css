@@ -1,5 +1,5 @@
 :root{
-    --mcolor: rgb(98, 171, 220);
+    --mcolor: rgb(3, 26, 126);
     --lmcolor:rgb(134, 207, 255);
     --dmcolor:rgb(53, 91, 116);
     --gmcolor:rgb(85, 115, 136);
@@ -11,6 +11,7 @@
     --bcolor:rgb(240, 240, 255);
     --dbcolor:rgb(58, 84, 116);
 
+    --fcolor:rgb(255, 255, 255);
 
     --fs:3VW;
     --bfs:5VW;
@@ -37,14 +38,14 @@ body{
     background-color: var(--bcolor);
     text-align: center;
     font-size: 40px;
-    margin-top: 50px;
+    
     margin-left: 0%;
     margin-bottom: 0%;
     margin-right: 0%;
 }
 
 .Center{
-    height: 100%;
+    height:90%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -57,7 +58,8 @@ body{
         --fs:5VW;
         --bfs:7VW;
 
-        
+
+       
     }
     
 }
@@ -76,9 +78,11 @@ body{
         --fs:10VW;
         --bfs:15VW;
 
-        
-       
-        
+        --mcolor: rgb(98, 171, 220);
+        --lmcolor:rgb(134, 207, 255);
+        --dmcolor:rgb(53, 91, 116);
+        --gmcolor:rgb(85, 115, 136);
+        --dbcolor:rgb(58, 84, 116);
 
     }
     

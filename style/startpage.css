@@ -12,7 +12,7 @@
 /* background-color: rgb(233, 238, 253); */
 
 .startbutton{
-    background-color: forestgreen;
+    background-color: var(--mcolor);
     border: 3px rgb(0, 0, 0) solid;
     border-radius: 8px;
     margin: 10%;
