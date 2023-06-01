@@ -161,7 +161,7 @@ transition: all 0.2s;
         padding: 0%;
     }
     .navbar.active{
-        height: 302px;
+        height: 320px;
   
     } 
 }
