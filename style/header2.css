@@ -149,6 +149,9 @@ transition: all 0.2s;
         grid-template-columns: 1fr 1fr;
         
         
+        padding: 0;
+        
+        
     }
     
     
