@@ -163,6 +163,10 @@ transition: all 0.2s;
         align-items: center;
         
     }
+    .navbar.active{
+        height: 302px;
+  
+    } 
 }
 @media only screen and (min-aspect-ratio:24/18){
     body{
