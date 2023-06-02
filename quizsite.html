@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="style/header2.css">
         <link rel="stylesheet" href="style/standert.css">
         <link rel="stylesheet" href="style/keybord.css">
+        <link rel="stylesheet" href="style/task.css">
         <style>
            
            
@@ -30,13 +31,16 @@
 
 
     <body>
+       
+
+
         <!-- header -->
 
         <header>
             <div class="logo">Matheapp</div>
             
-                <div class="fsh" id="timedisplay" onclick="changetime()">Time</div>
-                <div class="fsh" id="process">Progress</div>
+                <div class="fs" id="timedisplay" onclick="changetime()">Time</div>
+                <div class="fs" id="process">Progress</div>
             
             <div class="more">
                 <div class="line"></div>
@@ -64,22 +68,18 @@
             </nav>
         </header>
 
-       
+        
+         
 
         <!-- quiz -->
-        <div class="qbox" id="quizbox">
-            <div>
-                <div class="flex">
-                    <div class="flex1"></div>
-                    <div id="question" class="frage fsb">Frage</div>
-                    <div id="ansawer" class="frage fsb"></div>
-                    <div class="flex1"></div>
-                </div>
-                
-                <div id="nextquestion" class="nfrage fs" >Näschste Frage</div>
-            </div>
-            
+        <div class="taskbox">
+            <div class="task1 taskc" ><div class="tasktext">Aufgabe1</div></div>
+            <div class="task2 taskc" ><div class="tasktext">Aufgabe2</div></div>
+            <div class="task3 taskc" ><div class="tasktext">Aufgabe3</div></div>
+            <div class="task2 rbtn " onclick="rotate()"></div>
         </div>
+
+       
 
 
         <!-- koregierung -->
@@ -127,4 +127,5 @@
     </script>
     <script src="quiz.js"></script>
     <script src="timer.js"></script>
+    <script src="task.js"></script>
 </html>
