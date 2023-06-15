@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="style/standert.css">
         <link rel="stylesheet" href="style/keybord.css">
         <link rel="stylesheet" href="style/task.css">
+        <link rel="stylesheet" href="style/paint.css    ">
         <style>
            
            
@@ -98,23 +99,23 @@
         </div>
 
         <!-- Keybord -->
-        <div class="keybordbody">
-            <div class="keygrid">
-                <div class="keydiv"><button onclick="key(1)" class="key fs">1</button></div>
-                <div class="keydiv"><button onclick="key(2)" class="key fs">2</button></div>
-                <div class="keydiv"><button onclick="key(3)" class="key fs">3</button></div>
-                <div class="keydiv"><button onclick="key(4)" class="key fs">4</button></div>
-                <div class="keydiv"><button onclick="key(5)" class="key fs">5</button></div>
-                <div class="keydiv"><button onclick="key(6)" class="key fs">6</button></div>
-                <div class="keydiv"><button onclick="key(7)" class="key fs">7</button></div>
-                <div class="keydiv"><button onclick="key(8)" class="key fs">8</button></div>
-                <div class="keydiv"><button onclick="key(9)" class="key fs">9</button></div>
-                <div class="keydiv"><button onclick="erase()" class="key fs">&#8635</button></div>
-                <div class="keydiv"><button onclick="key(0)" class="key fs">0</button></div>
-                <div class="keydiv"><button onclick="done()" class="key fs">&#10003</button></div>
-
-
-            </div>
+        <canvas id="myCanvas" ></canvas>
+        <div id="saveArea">
+            <img id="canvasImg" />
+            <h2>Right Click to Save...</h2>
+            <button id="btnBack">Back</button>
+        </div>
+        <div id="tools">
+            <table>
+            <tr>
+            <td><label for="colorChange">Color</label><input
+            type="color" id="colorChange"/></td>
+            <td><label for="lineWidth">Width: </label><input
+            type="range" id="lineWidth" min="1" max="10" step="1"/></td>
+            <td><button id="btnSave">Save</button><button
+            id="btnClear">Clear</button></td>
+            </tr>
+            </table>
         </div>
     </body>
 
@@ -128,4 +129,5 @@
     <script src="quiz.js"></script>
     <script src="timer.js"></script>
     <script src="task.js"></script>
+    <script src="paint.js"></script>
 </html>

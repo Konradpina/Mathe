@@ -25,6 +25,17 @@ function load3task(){
     return
     
 }
+function loadalltask(){
+    
+    var tasks =document.getElementsByClassName("taskc")
+
+    for(i=0;i<tasks.length;i++){
+        tasks[i].querySelectorAll(".tasktext").innerHTML=randomtask()
+    }
+    
+    return
+    
+}
 function randomtask(){
    
    let a =Math.floor(Math.random()*100+1)
@@ -32,3 +43,7 @@ function randomtask(){
    let task=`${a} + ${b}`
    return task
 }
+
+loadalltask()
+rotate()
+rotate()
