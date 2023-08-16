@@ -14,7 +14,7 @@ function rotate(){
             tasks[i].classList.add("task2")
         }
     }
-    
+    resetcanvas()
     return
 }
 
@@ -25,17 +25,6 @@ function load3task(){
     return
     
 }
-function loadalltask(){
-    
-    var tasks =document.getElementsByClassName("taskc")
-
-    for(i=0;i<tasks.length;i++){
-        tasks[i].querySelectorAll(".tasktext").innerHTML=randomtask()
-    }
-    
-    return
-    
-}
 function randomtask(){
    
    let a =Math.floor(Math.random()*100+1)
@@ -43,7 +32,17 @@ function randomtask(){
    let task=`${a} + ${b}`
    return task
 }
+function resetcanvas(){
+    context.clearRect(0,0, context.canvas.width, context.canvas.height);
+}
 
+function loadalltask(){
+    document.getElementsByClassName("task1")[0].querySelectorAll(".tasktext")[0].innerHTML=randomtask()
+    document.getElementsByClassName("task2")[0].querySelectorAll(".tasktext")[0].innerHTML=randomtask()
+    document.getElementsByClassName("task3")[0].querySelectorAll(".tasktext")[0].innerHTML=randomtask()
+
+    
+    
+    return
+}
 loadalltask()
-rotate()
-rotate()

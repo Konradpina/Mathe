@@ -9,7 +9,7 @@
 body{
     margin: 0;
     padding: 0;
-   
+  
 }
 
 header{
@@ -95,9 +95,6 @@ transition: all 0.2s;
     background-color: var(--hfcolor);
     color: var(--hcolor);
 }
-.fsh{
-    font-size:30px;
-}
 
 @media only screen and (max-width:1000px){
     header{
@@ -122,32 +119,30 @@ transition: all 0.2s;
 }
 @media only screen and (max-width:750px){
     header{
-        padding: 0 5% ;
+        padding: 0 5%;
     } 
     .navbar ul {
         display: inline;
         align-items: center;
         
-        padding: 0;
-       
-        
     }
     .navbar.active{
-        height: 302px;
+        height: 432px;
   
     } 
-    
-    
 }
 @media only screen and (max-aspect-ratio:16/24){
     body{
         
         background-color: rgb(221, 249, 255);
     }
+    .navbar ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        
+    }
     
-    header{
-        padding: 0 5% ;
-    } 
     .navbar ul li {
         display: flex;
         justify-content: center;
@@ -158,12 +153,7 @@ transition: all 0.2s;
         display: inline;
         align-items: center;
         
-        padding: 0%;
     }
-    .navbar.active{
-        height: 320px;
-  
-    } 
 }
 @media only screen and (min-aspect-ratio:24/18){
     body{

@@ -1,12 +1,17 @@
 body{
-    
+    /* margin: 0px; */
     font-family: Arial, sans-serif;
 }
 #myCanvas{
-    height: 80%;
+    overflow: hidden;
     background-color: #ffffff;
     border-bottom: 1px solid black;
-    margin-bottom: 5px;
+    height: 95%;
+    /* width: 100%; */
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; */
 }
 
 table{
