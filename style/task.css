@@ -1,6 +1,6 @@
 :root{
     --headerh:var(--hheight);
-    --taskboxh:10vh;
+    --taskboxh:80px;
     --taskfc:rgb(255, 255, 255);
     --tasknc:rgb(51, 91, 211);
 }

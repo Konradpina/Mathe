@@ -49,9 +49,9 @@ context.canvas.width = window.innerWidth;
 context.canvas.height = window.innerHeight-60;
 
 //Mouse movement
- document.getElementById('myCanvas').onmousemove = handleMouseMove;
- document.getElementById('myCanvas').onmouseover = handleDown;
- document.getElementById('myCanvas').onmouseup = handleUp;
+document.onmousemove = handleMouseMove;
+document.onmousedown = handleDown;
+document.onmouseup = handleUp;
 
 //Style line
 context.strokeStyle = "#000";
@@ -66,10 +66,10 @@ function handleMouseMove(e){
     console.log(e.clientX);
     console.log(e.clientY);
     if(drawing){
-        context.lineTo(e.clientX, e.clientY-150);
+        context.lineTo(e.clientX, e.clientY);
         context.closePath();
         context.stroke();
-        context.moveTo(e.clientX, e.clientY-150);
+        context.moveTo(e.clientX, e.clientY);
     } else{
         context.moveTo(e.clientX, e.clientY);
     }
