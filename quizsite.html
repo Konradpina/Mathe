@@ -4,8 +4,6 @@
         <link rel="stylesheet" href="style/header2.css">
         <link rel="stylesheet" href="style/standert.css">
         <link rel="stylesheet" href="style/keybord.css">
-        <link rel="stylesheet" href="style/task.css">
-        <link rel="stylesheet" href="style/paint.css    ">
         <style>
            
            
@@ -32,16 +30,13 @@
 
 
     <body>
-       
-
-
         <!-- header -->
 
         <header>
             <div class="logo">Matheapp</div>
             
-                <div class="fs" id="timedisplay" onclick="changetime()">Time</div>
-                <div class="fs" id="process">Progress</div>
+                <div class="fsh" id="timedisplay" onclick="changetime()">Time</div>
+                <div class="fsh" id="process">Progress</div>
             
             <div class="more">
                 <div class="line"></div>
@@ -69,18 +64,22 @@
             </nav>
         </header>
 
-        
-         
+       
 
         <!-- quiz -->
-        <div class="taskbox">
-            <div class="task1 taskc" ><div class="tasktext">Aufgabe1</div></div>
-            <div class="task2 taskc" ><div class="tasktext">Aufgabe2</div></div>
-            <div class="task3 taskc" ><div class="tasktext">Aufgabe3</div></div>
-            <div class="task2 rbtn " onclick="rotate()"></div>
+        <div class="qbox" id="quizbox">
+            <div>
+                <div class="flex">
+                    <div class="flex1"></div>
+                    <div id="question" class="frage fsb">Frage</div>
+                    <div id="ansawer" class="frage fsb"></div>
+                    <div class="flex1"></div>
+                </div>
+                
+                <div id="nextquestion" class="nfrage fs" >Näschste Frage</div>
+            </div>
+            
         </div>
-
-       
 
 
         <!-- koregierung -->
@@ -99,23 +98,23 @@
         </div>
 
         <!-- Keybord -->
-        <canvas id="myCanvas" ></canvas>
-        <div id="saveArea">
-            <img id="canvasImg" />
-            <h2>Right Click to Save...</h2>
-            <button id="btnBack">Back</button>
-        </div>
-        <div id="tools">
-            <table>
-            <tr>
-            <td><label for="colorChange">Color</label><input
-            type="color" id="colorChange"/></td>
-            <td><label for="lineWidth">Width: </label><input
-            type="range" id="lineWidth" min="1" max="10" step="1"/></td>
-            <td><button id="btnSave">Save</button><button
-            id="btnClear">Clear</button></td>
-            </tr>
-            </table>
+        <div class="keybordbody">
+            <div class="keygrid">
+                <div class="keydiv"><button onclick="key(1)" class="key fs">1</button></div>
+                <div class="keydiv"><button onclick="key(2)" class="key fs">2</button></div>
+                <div class="keydiv"><button onclick="key(3)" class="key fs">3</button></div>
+                <div class="keydiv"><button onclick="key(4)" class="key fs">4</button></div>
+                <div class="keydiv"><button onclick="key(5)" class="key fs">5</button></div>
+                <div class="keydiv"><button onclick="key(6)" class="key fs">6</button></div>
+                <div class="keydiv"><button onclick="key(7)" class="key fs">7</button></div>
+                <div class="keydiv"><button onclick="key(8)" class="key fs">8</button></div>
+                <div class="keydiv"><button onclick="key(9)" class="key fs">9</button></div>
+                <div class="keydiv"><button onclick="erase()" class="key fs">&#8635</button></div>
+                <div class="keydiv"><button onclick="key(0)" class="key fs">0</button></div>
+                <div class="keydiv"><button onclick="done()" class="key fs">&#10003</button></div>
+
+
+            </div>
         </div>
     </body>
 
@@ -128,6 +127,4 @@
     </script>
     <script src="quiz.js"></script>
     <script src="timer.js"></script>
-    <script src="task.js"></script>
-    <script src="paint.js"></script>
 </html>
